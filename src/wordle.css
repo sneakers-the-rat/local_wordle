@@ -1,0 +1,168 @@
+.hidden {
+	display: none;
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+.overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	justify-content: center;
+	background-color: var(--color-background);
+	animation: SlideIn 100ms linear;
+	z-index: 2000;
+}
+
+:host([open]) .overlay {
+	display: flex;
+}
+
+.content {
+	position: relative;
+	color: var(--color-tone-1);
+	padding: 0 32px;
+	max-width: 500px;
+	margin: auto;
+	overflow-y: auto;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.content-container {
+	height: 100%;
+}
+
+.overlay.closing {
+	animation: SlideOut 150ms linear;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+game-icon {
+	position: absolute;
+	right: 0;
+	user-select: none;
+	cursor: pointer;
+}
+
+@media only screen and (min-device-width:320px) and (max-device-width:480px) {
+	.content {
+		max-width: 100%;
+		padding: 0;
+	}
+
+	game-icon {
+		padding: 0 16px;
+	}
+
+}
+
+@keyframes SlideIn {
+	0% {
+		transform: translateY(30px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+
+}
+
+@keyframes SlideOut {
+	0% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+
+	90% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(60px);
+	}
+
+}
+
+
+  .setting {
+
+    transition: background-color 0.25s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--color-tone-4);
+    padding: 16px 0;
+  }
+
+  a, a:visited {
+    color: var(--color-tone-2);
+  }
+
+  .title {
+    font-size: 18px;
+  }
+  .text {
+    padding-right: 8px;
+  }
+  .description {
+    font-size: 12px;
+    color: var(--color-tone-2);
+  }
+
+  #footnote {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    color: var(--color-tone-2);
+    font-size: 12px;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  #privacy-policy,
+  #copyright {
+    text-align: left;
+  }
+
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .setting {
+      padding: 16px;
+    }
+  }
+
+
+
+.flash {
+	background-color:  var(--color-tone-2);
+	transition:  background-color 0.1s ease-out;
+}
+
+#inputload {
+	padding:  0.5em 0;
+}
