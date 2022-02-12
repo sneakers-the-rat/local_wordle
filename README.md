@@ -8,6 +8,12 @@ mostly just unminifying the existing code, using some patterns from the original
 
 From the [wordle page](https://www.powerlanguage.co.uk/wordle/), Open your browser console (right click, inspect element or tools, open console or something), then load your stats like this:
 
+**NYT Version**
+```javascript
+JSON.parse(window.localStorage.getItem('nyt-wordle-statistics'))
+```
+
+**Original Version**
 
 ```javascript
 JSON.parse(window.localStorage.getItem('statistics'))
